@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+        <label>Bank Name</label>
+        <input name="bankname" />
+        <label>Balance</label>
+        <input name="balance" />
+        <button>Create</button>
+    </form>
+{% endblock %}

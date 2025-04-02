@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <div>
+        <a href="{% url 'create_bank' %}">
+            <button>Add Bank</button>
+        </a>
+    </div>
+    {% block content %}
+    <p>List of Bank</p>
+    <div>
+    {% for bank in banks %}
+        <p>{{ bank.name }}</p>
+        <p>{{ bank.balance }}</p>
+    {% endfor %}
+    </div>
+    {% endblock %}
+    </main>
+</body>
+</html>
