@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, View
 from apps.banks.models import Bank
+from apps.banks.tasks import task_do_something
 
 
 class BankListView(ListView):
@@ -17,5 +18,6 @@ class BankCreateView(View):
         bankname = request.POST.get("bankname")
         balance = request.POST.get("balance")
 
+        task_do_something()
         Bank.objects.create(name=bankname, balance=balance, user=request.user)
         return redirect("index")

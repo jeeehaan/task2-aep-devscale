@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "apps.banks",
+    "huey.contrib.djhuey",
 ]
 
 MIDDLEWARE = [
