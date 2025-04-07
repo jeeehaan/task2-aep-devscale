@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="w-full h-screen flex">
+    <aside class="w-[220px] bg-primary text-primary-content py-8 px-2">
+        <div class="font-semibold text-xl text-center text-white mb-8">Money Manager</div>
+        <a class="font-medium block" href="{% url 'bank' %}">
+            <div class="hover:bg-white hover:text-primary rounded p-2 hover:cursor-pointer">Bank</div>
+        </a>
+        <a class="font-medium block">
+             <div class="hover:bg-white hover:text-primary rounded p-2 hover:cursor-pointer">Pocket</div>
+        </a>
+    </aside>
+    <main class="w-[calc(100vw-220px)] space-y-8">
+        <div class="flex justify-between p-4 bg-primary/5 border-b border-primary/20"><p>{% block title %} {% endblock %}</p> <p>Jessy Hanifiah</p></div>
+        <div class="p-8">{% block maincontent %} {% endblock %}</div>
+    </main>
+</div>
+{% endblock %}
