@@ -20,4 +20,4 @@ class BankCreateView(View):
 
         task_do_something()
         Bank.objects.create(name=bankname, balance=balance, user=request.user)
-        return redirect("index")
+        return redirect("bank")
